@@ -58,12 +58,12 @@
             const localTime = new Date(now.getTime() + (koreaTimeOffset - now.getTimezoneOffset()) * 60 * 1000);
 
             // 시간, 분, 초 가져오기
-            const hours = localTime.getHours().toString().padStart(2, '0')+16;
+            const hours = localTime.getHours().toString().padStart(2, '0');
             const minutes = localTime.getMinutes().toString().padStart(2, '0');
             const seconds = localTime.getSeconds().toString().padStart(2, '0');
 
             // 화면에 시간 표시
-            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('clock').textContent = `${hours+4}:${minutes}:${seconds}`;
         }
 
         // 1초마다 시계 업데이트
