@@ -63,7 +63,7 @@
             const seconds = localTime.getSeconds().toString().padStart(2, '0');
 
             // 화면에 시간 표시
-            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('clock').textContent = `${hours+16}:${minutes}:${seconds}`;
         }
 
         // 1초마다 시계 업데이트
