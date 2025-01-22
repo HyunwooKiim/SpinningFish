@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Spinning Fish</title>
+        <style>
+            body {
+                background: white;
+            }
+            div {
+                position: fixed;
+            }
+            img {
+                position: fixed;
+            }
+            .fish {
+                top: 50%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+                -webkit-user-drag: none;
+                user-select: none;
+                -moz-user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                height: 100%;
+            }
+            .app {
+                top: 10%;
+                left: 5%;
+                height: 5%;
+            }
+            .figma {
+                top: 16%;
+                height: 5%;
+                height: 5.25%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="clock" style="position: fixed; top: 10px; right: 10px; font-size: 24px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color:black;" ></div>
+        
+        <img src="fish.gif" alt="Spinning Fish" draggable="false" class="fish">
+        <a href="https://vscode.dev/?vscode-lang=ko-kr" target="_blank" class="vsc">
+            <img src="VSC.png" alt="Visual Studio Code" draggable="false" class="app">
+        </a>
+        <a href="https://figma.com" target="_blank" class="figma">
+            <img src="figma.webp" alt="Figma" draggable="false" class="app figma">
+        </a>
+    </body>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</html>
